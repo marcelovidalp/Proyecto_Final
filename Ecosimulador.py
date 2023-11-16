@@ -7,6 +7,36 @@ class Organismo:
         self.vida = vida
         self.energia = energia
         self.velocidad = velocidad
+        
+class EcosistemaInterfaz:
+    def __init__(self, main, filas, columnas):
+        self.main = main
+        self.filas = filas
+        self.columnas = columnas
+        self.ecosistema = [[None for _ in range(columnas)] for _ in range(filas)]
+        
+        self.canvas = Canvas(main, width=columnas*30, height=filas*30, bg="white")
+        self.canvas.pack()
+        
+        self.startEcosistema()
+        self.Movimientos()
+    
+    def startEcosistema(self):
+        for _ in range(10):
+            especie = random.choice(["Leon", "Cebra", "Planta"])
+            x = random.randint(0, self.columnas - 1)
+            y = random.randint(0, self.filas - 1)
+            organismo = Organismo(especie, x, y)
+            self.ecosisistema[x][y] = organismo
+            
+    def Movimientos(self):
+        for fila in range(self.filas):
+            for columna in range(self.columnas):
+                new_fila = random.choice
+            if organismo is not None:
+                nueva_fila = random.choice([co])
+
+        
     
 class Animal(Organismo):
     def __init__(self, posicion, vida, energia, velocidad, especie, dieta):
